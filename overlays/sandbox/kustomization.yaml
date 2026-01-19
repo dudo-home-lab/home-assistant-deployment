@@ -8,7 +8,7 @@ resources:
 patches:
   - target:
       kind: HTTPRoute
-      name: homebridge
+      name: home-assistant
     patch: |-
       - op: add
         path: /spec/hostnames/-
