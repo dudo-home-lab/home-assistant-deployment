@@ -32,9 +32,19 @@ spec:
               memory: 1Gi
             limits:
               memory: 2Gi
+        - name: matter-server
+          image: ghcr.io/home-assistant-libs/python-matter-server:stable
+          ports:
+            - containerPort: 5580
+          volumeMounts:
+            - name: matter-data
+              mountPath: /data
       volumes:
         - name: home-assistant-data
           persistentVolumeClaim:
             claimName: home-assistant-pvc
+        - name: matter-data
+          persistentVolumeClaim:
+            claimName: matter-server-data
       hostNetwork: true
       dnsPolicy: ClusterFirstWithHostNet
