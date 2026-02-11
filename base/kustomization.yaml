@@ -1,17 +1,14 @@
----
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
 resources:
   - pvc.yaml
   - deployment.yaml
   - http-route.yaml
   - service.yaml
-
 images:
   - name: ghcr.io/home-assistant/home-assistant
-    newTag: '2026.1.2'
-
+    newTag: latest
+    digest: sha256:17441c45ba14560b4ef727ee06aac4d605cf0dc0625fc4f2e043cb2551d72749
 configMapGenerator:
   - name: home-assistant-config
     literals:
