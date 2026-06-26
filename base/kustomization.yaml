@@ -10,7 +10,9 @@ resources:
 
 images:
   - name: ghcr.io/home-assistant/home-assistant
-    newTag: '2026.1.2'
+    newTag: '2026.6'
+  - name: ghcr.io/matter-js/matterjs-server
+    newTag: '1.1'
 
 configMapGenerator:
   - name: home-assistant-config

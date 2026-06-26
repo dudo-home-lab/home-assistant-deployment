@@ -29,16 +29,22 @@ spec:
           resources:
             requests:
               cpu: '2'
-              memory: 1Gi
+              memory: 3Gi
             limits:
-              memory: 2Gi
+              memory: 3Gi
         - name: matter-server
-          image: ghcr.io/home-assistant-libs/python-matter-server:stable
+          image: ghcr.io/matter-js/matterjs-server
           ports:
             - containerPort: 5580
           volumeMounts:
             - name: matter-data
               mountPath: /data
+          resources:
+            requests:
+              cpu: '2'
+              memory: 3Gi
+            limits:
+              memory: 3Gi
       volumes:
         - name: home-assistant-data
           persistentVolumeClaim:
