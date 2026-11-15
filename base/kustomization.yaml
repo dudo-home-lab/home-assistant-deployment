@@ -7,9 +7,9 @@ resources:
   - service.yaml
 images:
   - name: ghcr.io/home-assistant/home-assistant
-    newTag: '2026.7'
+    newTag: '2026.11'
   - name: ghcr.io/matter-js/matterjs-server
-    newTag: '1.2'
+    newTag: '1.6'
 configMapGenerator:
   - name: home-assistant-config
     literals:
